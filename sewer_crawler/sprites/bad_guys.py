@@ -1,7 +1,7 @@
-import pygame
 import math
 import random
 
+import pygame
 from settings import *
 
 

@@ -1,18 +1,18 @@
-from block import Block
-from ground import Ground
-from player import Player
-from bad_guys import BadGuy
-from skeletons import Skeleton
-from flame_skeletons import FlameSkeleton
-from camera import Camera
-from button import Button
-from attack import Attack
-from sprite_sheet import SpriteSheet
-from npc import NPC
-from settings import *
+import sys
 
 import pygame
-import sys
+from attack import Attack
+from bad_guys import BadGuy
+from block import Block
+from button import Button
+from camera import Camera
+from flame_skeletons import FlameSkeleton
+from ground import Ground
+from npc import NPC
+from player import Player
+from settings import *
+from skeletons import Skeleton
+from sprite_sheet import SpriteSheet
 
 
 class Game:
@@ -52,7 +52,7 @@ class Game:
         self.screen_width = WINDOW_WIDTH
         self.screen_height = WINDOW_HEIGHT
         self.clock = pygame.time.Clock()
-        self.font = pygame.font.Font("fonts/DinoJumps.otf",  48)
+        self.font = pygame.font.Font("fonts/DinoJumps.otf", 48)
         self.running = True
         self.playing = True
         self.all_sprites = pygame.sprite.LayeredUpdates()
