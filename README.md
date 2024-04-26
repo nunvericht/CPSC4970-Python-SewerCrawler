@@ -15,3 +15,5 @@ Space Bar is attack.  After locating the dinosaur, if player collides with
 npc, the game will end
 
 Good luck!
+
+Credit to opengameart.org for the character and enemy sprites

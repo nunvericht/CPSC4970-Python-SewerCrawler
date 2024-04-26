@@ -30,13 +30,13 @@ class Game:
             bad_guys: Pygame sprite group for enemy characters.
             attacks: Pygame sprite group for attack animations.
             npc_group: Pygame sprite group for non-player characters.
-            player_sprite_sheet: Sprite sheet for character animations.
-            dino_sprite: Sprite image for dinosaur animations.
+            player_sprite_sheet: Sprite sheet for character animations. (BoundWorlds project/opengameart.org)
+            dino_sprite: Sprite image for dinosaur (create.microsoft.com).
             terrain_sprite_sheet: Sprite sheet for terrain graphics.
             terrain2_sprite_sheet: Additional sprite sheet for terrain variations.
             bad_guys_sprite_sheet: Sprite sheet for enemy character animations (BoundWorlds project/opengameart.org)
             skeletons_sprite_sheet: Sprite sheet for skeleton animations (BoundWorlds project/opengameart.org).
-            npc_image: Scaled image of a friendly dinosaur NPC (create.microsoft.com).
+            npc_image: Scaled image of a friendly dinosaur NPC.
             attack_sprite_sheet: Sprite sheet for attack animations.
             start_background: Image for game start screen background.
             game_over_background: Image for game over screen background.

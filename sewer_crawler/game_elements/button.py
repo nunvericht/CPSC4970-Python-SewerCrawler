@@ -3,7 +3,7 @@ import pygame
 
 class Button:
     def __init__(self, x, y, width, height, fg_color, bg_color, content, font_size):
-        self.font = pygame.font.Font("../main_game/fonts/DinoJumps.otf", font_size)
+        self.font = pygame.font.Font("fonts/DinoJumps.otf", font_size)
         self.content = content
         self.rect = pygame.Rect(x, y, width, height)
         self.fg_color = fg_color
