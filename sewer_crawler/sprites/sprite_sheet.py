@@ -1,6 +1,6 @@
 import pygame
 
-from ..game_elements import settings
+from sewer_crawler.game_elements import settings
 
 
 class SpriteSheet:

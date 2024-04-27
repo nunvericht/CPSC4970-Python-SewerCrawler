@@ -2,7 +2,7 @@ import math
 
 import pygame
 
-from ..game_elements import settings
+from sewer_crawler.game_elements import settings
 
 
 class Attack(pygame.sprite.Sprite):

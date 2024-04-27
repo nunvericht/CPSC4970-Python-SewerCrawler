@@ -1,4 +1,4 @@
-import settings
+from sewer_crawler.game_elements import settings
 
 
 class Camera:
@@ -16,7 +16,7 @@ class Camera:
         self.y = player_rect.centery - self.screen_height // 2
 
         self.x = max(0, min(self.x, self.map_width - self.screen_width))
-        self.y = max(0, min(self.y, self.map_height- self.screen_height))
+        self.y = max(0, min(self.y, self.map_height - self.screen_height))
 
     def apply(self, rect):
         return rect.move(-self.x, -self.y)
