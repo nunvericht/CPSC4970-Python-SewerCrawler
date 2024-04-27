@@ -2,7 +2,8 @@ import math
 import random
 
 import pygame
-from settings import *
+
+from ..game_elements import settings
 
 
 class Skeleton(pygame.sprite.Sprite):
@@ -26,27 +27,29 @@ class Skeleton(pygame.sprite.Sprite):
         """
     def __init__(self, game, x, y):
         self.game = game
-        self._layer = BAD_GUY_LAYER
+        self._layer = settings.BAD_GUY_LAYER
         super().__init__(self.game.bad_guys)
         self.game.all_sprites.add(self.game.bad_guys)
 
-        tile_size = TILE_SIZE
-        self.x = x * tile_size
-        self.y = y * tile_size
-        self.width, self.height = tile_size, tile_size
+        self.tile_size = settings.TILE_SIZE
+        self.x = x * self.tile_size
+        self.y = y * self.tile_size
+        self.width, self.height = self.tile_size, self.tile_size
 
         self.dx, self.dy = 0, 0
         self.facing = random.choice(["left", "right"])
         self.animation_loop = 1
         self.movement_loop = 0
         self.max_travel = random.randint(32, 64)
+        self.speed = settings.BAD_GUY_SPEED
 
+        self.black = settings.BLACK
         self.x_offset = 3
         self.y_offset = 3
         skeleton_image = self.game.skeletons_sprite_sheet.get_sprite(0 + self.x_offset, 0 + self.y_offset,
                                                                      self.width, self.height)
         self.image = pygame.transform.scale(skeleton_image, (48, 48))
-        self.image.set_colorkey(BLACK)
+        self.image.set_colorkey(self.black)
         self.rect = self.image.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y
@@ -85,12 +88,12 @@ class Skeleton(pygame.sprite.Sprite):
 
     def movement(self):
         if self.facing == "left":
-            self.dx -= BAD_GUY_SPEED
+            self.dx -= self.speed
             self.movement_loop -= 1
             if self.movement_loop <= -self.max_travel:
                 self.facing = "right"
         if self.facing == "right":
-            self.dx += BAD_GUY_SPEED
+            self.dx += self.speed
             self.movement_loop += 1
             if self.movement_loop >= self.max_travel:
                 self.facing = "left"

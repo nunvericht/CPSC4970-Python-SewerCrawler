@@ -6,7 +6,7 @@ when the knight collides with the stairs.  The game is over when the knight
 collides with a baddie or collides with the dinosaur in the lower level
 
 How to execute:
-main is run from game.py and found under sewer_crawler/main_game/
+main is run from game.py and found under sewer_crawler package.  
 required imports are documented in the requirements.txt
 
 After running main, a start menu will pop up. Press start with the mouse

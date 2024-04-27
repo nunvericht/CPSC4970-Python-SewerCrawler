@@ -1,15 +1,15 @@
 import pygame
 
-from settings import *
+from ..game_elements import settings
 
 
 class Block(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
-        self._layer = BLOCK_LAYER
+        self._layer = settings.BLOCK_LAYER
         super().__init__(self.game.all_sprites, self.game.blocks)
 
-        tile_size = TILE_SIZE
+        tile_size = settings.TILE_SIZE
         self.x = x * tile_size
         self.y = y * tile_size
         self.width = tile_size

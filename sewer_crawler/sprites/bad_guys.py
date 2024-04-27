@@ -2,7 +2,8 @@ import math
 import random
 
 import pygame
-from settings import *
+
+from ..game_elements import settings
 
 
 class BadGuy(pygame.sprite.Sprite):
@@ -26,11 +27,11 @@ class BadGuy(pygame.sprite.Sprite):
         """
     def __init__(self, game, x, y):
         self.game = game
-        self._layer = BAD_GUY_LAYER
+        self._layer = settings.BAD_GUY_LAYER
         super().__init__(self.game.bad_guys)
         self.game.all_sprites.add(self.game.bad_guys)
 
-        tile_size = TILE_SIZE
+        tile_size = settings.TILE_SIZE
         self.x = x * tile_size
         self.y = y * tile_size
         self.width, self.height = tile_size, tile_size
@@ -40,9 +41,10 @@ class BadGuy(pygame.sprite.Sprite):
         self.animation_loop = 1
         self.movement_loop = 0
         self.max_travel = random.randint(32, 64)
+        self.speed = settings.BAD_GUY_SPEED
 
         self.image = self.game.bad_guys_sprite_sheet.get_sprite(3, 2, self.width, self.height)
-        self.image.set_colorkey(BLACK)
+        # self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y
@@ -81,22 +83,22 @@ class BadGuy(pygame.sprite.Sprite):
 
     def movement(self):
         if self.facing == "left":
-            self.dx -= BAD_GUY_SPEED
+            self.dx -= self.speed
             self.movement_loop -= 1
             if self.movement_loop <= -self.max_travel:
                 self.facing = "right"
         if self.facing == "right":
-            self.dx += BAD_GUY_SPEED
+            self.dx += self.speed
             self.movement_loop += 1
             if self.movement_loop >= self.max_travel:
                 self.facing = "left"
         if self.facing == "up":
-            self.dy -= BAD_GUY_SPEED
+            self.dy -= self.speed
             self.movement_loop -= 1
             if self.movement_loop <= -self.max_travel:
                 self.facing = "down"
         if self.facing == "down":
-            self.dy += BAD_GUY_SPEED
+            self.dy += self.speed
             self.movement_loop += 1
             if self.movement_loop >= self.max_travel:
                 self.facing = "up"

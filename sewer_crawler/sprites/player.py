@@ -1,7 +1,8 @@
 import math
 
 import pygame
-from settings import *
+
+from ..game_elements import settings
 
 
 class Player(pygame.sprite.Sprite):
@@ -23,14 +24,14 @@ class Player(pygame.sprite.Sprite):
         """
     def __init__(self, game, x, y):
         self.game = game
-        self._layer = PLAYER_LAYER
+        self._layer = settings.PLAYER_LAYER
         self.groups = self.game.all_sprites
         super().__init__(self.groups)
 
-        tile_size = TILE_SIZE
-        self.x = x * tile_size
-        self.y = y * tile_size
-        self.width, self.height = tile_size, tile_size
+        self.tile_size = settings.TILE_SIZE
+        self.x = x * self.tile_size
+        self.y = y * self.tile_size
+        self.width, self.height = self.tile_size, self.tile_size
 
         self.dx, self.dy = 0, 0
 
@@ -75,7 +76,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y
-        self.speed = PLAYER_SPEED
+        self.speed = settings.PLAYER_SPEED
         self.collide_with_stairs = False
 
     def update(self):

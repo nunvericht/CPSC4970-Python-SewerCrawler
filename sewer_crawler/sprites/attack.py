@@ -1,20 +1,21 @@
 import math
 
 import pygame
-from settings import *
+
+from ..game_elements import settings
 
 
 class Attack(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
-        self._layer = PLAYER_LAYER
+        self._layer = settings.PLAYER_LAYER
         super().__init__(self.game.attacks)
         self.game.all_sprites.add(self.game.attacks)
 
-        tile_size = TILE_SIZE
+        self.tile_size = settings.TILE_SIZE
         self.x = x
         self.y = y
-        self.width, self.height = tile_size, tile_size
+        self.width, self.height = self.tile_size, self.tile_size
 
         self.animation_loop = 0
         self.image = self.game.attack_sprite_sheet.get_sprite(0, 0, self.width, self.height)

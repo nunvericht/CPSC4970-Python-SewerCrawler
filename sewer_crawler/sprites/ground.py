@@ -1,16 +1,16 @@
 import pygame
 
-from settings import *
+from ..game_elements import settings
 
 
 class Ground(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
         self.groups = self.game.all_sprites
-        self._layer = GROUND_LAYER
+        self._layer = settings.GROUND_LAYER
         super().__init__(self.groups)
 
-        tile_size = TILE_SIZE
+        tile_size = settings.TILE_SIZE
         self.x = x * tile_size
         self.y = y * tile_size
         self.width = tile_size
