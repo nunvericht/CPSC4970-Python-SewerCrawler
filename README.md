@@ -6,13 +6,14 @@ when the knight collides with the stairs.  The game is over when the knight
 collides with a baddie or collides with the dinosaur in the lower level
 
 How to execute:
-main is run from game.py and found under sewer_crawler package.  
-required imports are documented in the requirements.txt
+"main" is located in game.py under sewer_crawler package.  
+Required imports are documented in the requirements.txt
 
 After running main, a start menu will pop up. Press start with the mouse
-Controls are L, R, U, D arrow keys or standard WASD
-Space Bar is attack.  After locating the dinosaur, if player collides with 
-npc, the game will end
+Controls are L, R, U, D arrow keys or standard WASD.
+Space Bar is attack.  If player collides with the dino NPC, the game will end 
+with a quest complete screen.  If player collides with a baddie, the game ends with a 
+game over screen.  Player can press play again button with mouse to start again.
 
 Good luck!
 
