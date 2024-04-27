@@ -5,6 +5,7 @@ TILE_SIZE = 32
 FPS = 30
 BAD_GUY_SPEED = 2
 PLAYER_SPEED = 3
+START_LEVEL = 0
 
 # Game Layers:
 GROUND_LAYER = 1
@@ -49,14 +50,17 @@ tile_map1 = [
 tile_map2 = [
     "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
     "G                                  G",
-    "G            E                     G",
+    "G            E         WG          G",
+    "G                      WG          G",
+    "G        B             WG     D    G",
+    "G                   B  WG          G",
+    "G                      WG          G",
+    "G            B         WG          G",
+    "G                      WG          G",
+    "G                      WG          G",
+    "G                      WG   F      G",
     "G                                  G",
-    "G        B             G      D    G",
-    "G                   B  G           G",
-    "G                      G           G",
-    "G            B         G           G",
-    "G                      G           G",
-    "G                      G           G",
-    "G                      G           G",
+    "G                                  G",
+    "G                                  G",
     "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
     ]

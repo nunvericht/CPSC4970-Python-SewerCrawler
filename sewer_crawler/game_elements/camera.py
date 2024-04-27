@@ -1,4 +1,4 @@
-import settings
+from sewer_crawler.game_elements import settings
 
 
 class Camera:

@@ -3,7 +3,7 @@ import random
 
 import pygame
 
-from ..game_elements import settings
+from sewer_crawler.game_elements import settings
 
 
 class BadGuy(pygame.sprite.Sprite):

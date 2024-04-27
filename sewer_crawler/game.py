@@ -80,7 +80,7 @@ class Game:
         self.game_over_background = pygame.image.load("images/game_over.png")
         self.player = player.Player(self, 5, 5)
         self.camera = camera.Camera(self.window_width, self.window_height)
-        self.current_level = 0
+        self.current_level = settings.START_LEVEL
 
     def create_tile_map(self, current_level):
         if current_level == 0:

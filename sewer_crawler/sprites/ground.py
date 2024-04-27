@@ -1,13 +1,13 @@
 import pygame
 
-from ..game_elements import settings
+from sewer_crawler.game_elements import settings
 
 
 class Ground(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
-        self.groups = self.game.all_sprites
         self._layer = settings.GROUND_LAYER
+        self.groups = self.game.all_sprites
         super().__init__(self.groups)
 
         tile_size = settings.TILE_SIZE
